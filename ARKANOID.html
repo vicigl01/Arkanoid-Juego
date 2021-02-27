@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ARKANOID</title>
+    <style>
+        /*Importar fuente Arkanoid*/
+        @font-face {
+            font-family: Arka_solid;
+            src: local("Arka_solid"), url('Arka_solid.ttf');
+        }
+
+        /*Importar fuente Emulogic*/
+        @font-face {
+            font-family: emulogic;
+            src: local("emulogic"), url('emulogic.ttf');
+        }
+
+        /*Imagen de fondo de la web*/
+        body {
+
+            background-color: #010d65ff;
+        }
+
+        /*Fondo del canvas*/
+        #lienzo {
+            background-image: url("hexagon_pattern.png");
+            background-repeat: no-repeat;
+            background-size: 832px 990px;
+        }
+
+        button {
+            background-color: hsla(333, 93%, 56%);
+            border: 0.5cm;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            font-size: 24px;
+            font-family: emulogic;
+
+        }
+
+        button:active {
+            background: #9a64f1;
+        }
+
+        #play {
+            float: right;
+            margin-right: 10px;
+           
+        }
+
+        #pause {
+            float: right;
+            margin-right: 950px;
+        }
+
+        #puntos,
+        #vidas {
+            font-family: emulogic;
+            color: #ffffff;
+            clear: left;
+        }
+
+        #Estado {
+            font-family: emulogic;
+            color: #ffffff;
+            font-size: 30px;
+            float: right;
+            margin-right: 950px;
+            margin-top: -20px;
+        }
+
+        footer {
+            text-align: left;
+            left: 900px;
+            margin-top: 100px;
+            color: rgb(73, 78, 110);
+            font-size: 24px;
+            padding-right: 40px;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body onload="arkanoid();">
+
+    <canvas width=832 height=990 id="lienzo" onmousemove="mueveRaqueta(event)" onmouseout="resetRaqueta()"></canvas>
+
+    <script type="text/javascript" src="javascript.js"></script>
+
+
+    <div style="overflow: hidden;">
+
+        <div aling=left>
+            <p id="puntos"></p>
+        </div>
+
+        <div aling=center>
+            <p id="Estado"></p>
+        </div>
+
+        <div aling=right>
+            <p id="vidas"></p>
+        </div>
+
+    </div>
+
+    <!--Botones para pausar y reiniciar/reanudar la partida-->
+    <button id="pause" onclick="pararBola()">PAUSE</button>
+    <button id="play" onclick="mueveBola()">PLAY</button>
+
+    <!-- Autores y links -->
+    <footer>
+        <br>
+        <a href="https://www.pinterest.es/pin/682013937308677294/">Foto título Arkanoid</a>
+        <br>
+        <a href="https://fontmeme.com/fuentes/fuente-arkanoid/">Fuente Arkanoid</a>
+        <br>
+        <a href="https://www.urbanfonts.com/fonts/Emulogic.htm">Fuente Emulogic</a>
+    </footer>
+
+
+</body>
+
+</html>
